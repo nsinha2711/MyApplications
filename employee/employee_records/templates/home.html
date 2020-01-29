@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;;
+  font-size: 14px;
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-image: url('static/images/home-background-screening.jpg');
+  height:100%;
+}
+
+.container {
+  width: 500px;
+  margin: 25px auto;
+}
+
+.addbtn
+{
+background-color: #4CAF50;
+color: black;
+padding: 10px 5px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 40%;
+opacity: 0.9;
+
+}
+
+
+</style>
+<meta charset="utf-8" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+<body>-->
+<form method="POST" class= "post-form" action="emp" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div >
+    <h1>Search / Add</h1>
+    <hr>
+    <div >
+        <label><b>Name</b></label>
+<!--        <input type="text" id ="name" placeholder="Enter full name" name="Name">-->
+<!--        <div>-->
+            {{form.name}}
+<!--        </div>-->
+
+    </div>
+    <div>
+        <label ><b>PAN Number</b></label>
+<!--        <input type="text" placeholder="Enter PAN Number" name="PAN Number" required>-->
+            {{form.pan_number}}
+
+<!--        <div>-->
+<!--            {{form.pan_number}}-->
+<!--        </div>-->
+    </div>
+    <div>
+        <label ><b>Age</b></label>
+<!--        <input type="text" placeholder="Enter your age" name="Age" required>-->
+            {{form.age}}
+
+<!--        <div>-->
+<!--            {{form.age}}-->
+<!--        </div>-->
+    </div>
+
+    <div>
+        <label ><b>Gender</b></label>
+<!--        <input type="text" placeholder="Enter your gender" name="Gender" required>-->
+            {{form.gender}}
+
+    </div>
+
+    <div>
+        <label ><b>Email</b></label>
+<!--        <input type="text" placeholder="Enter your email" name="Email" required>-->
+            {{form.email}}
+    </div>
+
+    <div>
+        <label><b>City</b></label>
+<!--        <input type="text" placeholder="Enter your city" name="City" required>-->
+            {{form.city}}
+    </div>
+
+    <hr>
+<!--    <button type="submit" class="searchbtn">Search</button>-->
+    <button type="submit" class="addbtn">Add</button>
+
+  </div>
+
+<!--</form>-->
+<!--<form class="" method="get" action="search">-->
+<!--    <div>-->
+<!--        <button type="submit" class="addbtn">Search</button>-->
+<!--        {% if found_entries %}-->
+<!--           {% for field in found_entries %}-->
+<!--                {{ model.field }}-->
+<!--           {% endfor %}-->
+<!--        {% endif %}-->
+
+<!--    </div>-->
+<!--</form>-->
+</body>
+</html>

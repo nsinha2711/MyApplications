@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+</head>
+<body>
+<table>
+    {% block content %}
+
+    <tr>
+        <th>Name</th>
+        <th>PAN Number</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Actions</th>
+    </tr>
+    <tbody>
+{% for employee in employees %}
+    <tr>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.pan_number }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.city }}</td>
+        <td class="w3-bar">
+            <a href="/edit/{{ employee.id }}"><span>Edit</span></a>
+            <a href="/delete/{{ employee.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+  {% include "pagination.html" with page=employees %}
+{% endblock %}
+</table>
+<br>
+<br>
+<center><a href="/emp" class="btn btn-primary">Add New Record</a></center>
+</body>
+</html>

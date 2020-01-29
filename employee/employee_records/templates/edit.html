@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+</head>
+<body>
+<form method="POST" class="post-form" action="/update/{{employee.id}}">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div >
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div >
+    <label> Name:</label>
+    <div >
+        <input type="text" name="Name" id="id_name" value="{{ employee.name }}"/>
+    </div>
+  </div>
+  <div>
+    <label >PAN number:</label>
+    <div >
+        <input type="text" name="PAN Number" id="id_pan_number"  value="{{ employee.pan_number }}" />
+    </div>
+  </div>
+    <div>
+    <label> Age:</label>
+    <div >
+        <input type="text" name="Age" id="id_age" value="{{ employee.age }}" />
+    </div>
+  </div>
+    <div >
+    <label>Gender:</label>
+    <div>
+        <input type="text" name="Gender" id="id_gender" value="{{ employee.gender }}" />
+    </div>
+    <label>Email:</label>
+    <div>
+        <input type="email" name="Gender" id="id_email" value="{{ employee.email }}" />
+    </div>
+        <label>City:</label>
+    <div>
+        <input type="text" name="City" id="id_city" value="{{ employee.city }}" />
+    </div>
+  </div>
+    <div >
+    <label></label>
+    <div>
+    <button type="submit" >Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
